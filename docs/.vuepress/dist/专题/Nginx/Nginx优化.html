@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx优化 | 小生天地</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpeg">
+    <meta name="description" content="小生学习天地">
+    
+    <link rel="preload" href="/assets/css/0.styles.c8e23b86.css" as="style"><link rel="preload" href="/assets/js/app.1e0ff288.js" as="script"><link rel="preload" href="/assets/js/2.4ba73d99.js" as="script"><link rel="preload" href="/assets/js/42.1dcb925d.js" as="script"><link rel="prefetch" href="/assets/js/10.4eee5e1e.js"><link rel="prefetch" href="/assets/js/11.4b53fc13.js"><link rel="prefetch" href="/assets/js/12.ea4eab51.js"><link rel="prefetch" href="/assets/js/13.0ca26e0e.js"><link rel="prefetch" href="/assets/js/14.f8fdb32b.js"><link rel="prefetch" href="/assets/js/15.5230853a.js"><link rel="prefetch" href="/assets/js/16.19fb2497.js"><link rel="prefetch" href="/assets/js/17.8f34ab93.js"><link rel="prefetch" href="/assets/js/18.28d1b0e2.js"><link rel="prefetch" href="/assets/js/19.f869b4f6.js"><link rel="prefetch" href="/assets/js/20.bffe4966.js"><link rel="prefetch" href="/assets/js/21.9753d22c.js"><link rel="prefetch" href="/assets/js/22.8add9a2a.js"><link rel="prefetch" href="/assets/js/23.05cd7b91.js"><link rel="prefetch" href="/assets/js/24.d1a24eab.js"><link rel="prefetch" href="/assets/js/25.8fa1fc2e.js"><link rel="prefetch" href="/assets/js/26.32596c5a.js"><link rel="prefetch" href="/assets/js/27.bb69b8ee.js"><link rel="prefetch" href="/assets/js/28.9e883e20.js"><link rel="prefetch" href="/assets/js/29.2e1eca56.js"><link rel="prefetch" href="/assets/js/3.2430b9f2.js"><link rel="prefetch" href="/assets/js/30.ff916bfc.js"><link rel="prefetch" href="/assets/js/31.fae75ca0.js"><link rel="prefetch" href="/assets/js/32.ce7ba1fd.js"><link rel="prefetch" href="/assets/js/33.9ff8f1b7.js"><link rel="prefetch" href="/assets/js/34.c16fa8dc.js"><link rel="prefetch" href="/assets/js/35.ebfc43d9.js"><link rel="prefetch" href="/assets/js/36.23861774.js"><link rel="prefetch" href="/assets/js/37.a3c42893.js"><link rel="prefetch" href="/assets/js/38.c941de02.js"><link rel="prefetch" href="/assets/js/39.9ef69f92.js"><link rel="prefetch" href="/assets/js/4.82f14cf4.js"><link rel="prefetch" href="/assets/js/40.372d7734.js"><link rel="prefetch" href="/assets/js/41.b15d16ff.js"><link rel="prefetch" href="/assets/js/43.e72f6cb3.js"><link rel="prefetch" href="/assets/js/44.38e7cbe6.js"><link rel="prefetch" href="/assets/js/45.9fc95b3b.js"><link rel="prefetch" href="/assets/js/46.76c3fd6f.js"><link rel="prefetch" href="/assets/js/47.56e198d2.js"><link rel="prefetch" href="/assets/js/48.22c19d1e.js"><link rel="prefetch" href="/assets/js/5.70bf09b3.js"><link rel="prefetch" href="/assets/js/6.c6e1ffb9.js"><link rel="prefetch" href="/assets/js/7.d87bc2c7.js"><link rel="prefetch" href="/assets/js/8.f9aee1c5.js"><link rel="prefetch" href="/assets/js/9.b8ff7e4d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c8e23b86.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpeg" alt="小生天地" class="logo"> <span class="site-name can-hide">小生天地</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/dwanda" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/dwanda" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Nginx</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/专题/Nginx/安装部署.html" class="sidebar-link">安装部署</a></li><li><a href="/专题/Nginx/常用nginx命令.html" class="sidebar-link">常用nginx命令</a></li><li><a href="/专题/Nginx/配置文件详解.html" class="sidebar-link">配置文件详解</a></li><li><a href="/专题/Nginx/默认网站.html" class="sidebar-link">默认网站</a></li><li><a href="/专题/Nginx/虚拟主机.html" class="sidebar-link">虚拟主机</a></li><li><a href="/专题/Nginx/反向代理.html" class="sidebar-link">反向代理</a></li><li><a href="/专题/Nginx/下载限速.html" class="sidebar-link">下载限速</a></li><li><a href="/专题/Nginx/URL重写.html" class="sidebar-link">URL重写</a></li><li><a href="/专题/Nginx/Nginx优化.html" class="active sidebar-link">Nginx优化</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/专题/Nginx/Nginx缓存.html" class="sidebar-link">Nginx缓存</a></li><li><a href="/专题/Nginx/Nginx镜像服务器.html" class="sidebar-link">Nginx缓镜像服务器</a></li><li><a href="/专题/Nginx/Nginx集群.html" class="sidebar-link">Nginx集群</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML &amp; CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机网络</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>npm</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>GIT</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="nginx优化"><a href="#nginx优化" class="header-anchor">#</a> Nginx优化</h3> <hr> <h3 id="优化目的"><a href="#优化目的" class="header-anchor">#</a> 优化目的</h3> <p>标准情况下，软件默认的参数都是对安装软件的硬件标准来设置的，⽬前我们服务器的硬件资源远远⼤于要求的标准，所以为了让服务器性能更加出众，充分利⽤服
+务器的硬件资源，我们⼀般需要优化APP的并发数来提升服务器的性能。
+</p><div style="margin-top:50px;"></div><p></p> <h3 id="并发优化"><a href="#并发优化" class="header-anchor">#</a> 并发优化</h3> <div class="language-js extra-class"><pre class="language-js"><code>#启动工作进程数量
+worker_processes  <span class="token number">4</span><span class="token punctuation">;</span>
+
+#cpu亲和力，指定进程运行的核的编号，采用掩码的方式设置编号。保证每个核上都有一个进程
+worker_cpu_affinity   <span class="token number">0001</span> <span class="token number">0010</span> <span class="token number">0100</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+
+#单个工作进程维护的请求队列长度
+events <span class="token punctuation">{</span>
+  worker_connections  <span class="token number">1024</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div style="margin-top:50px;"></div> <h3 id="长链接"><a href="#长链接" class="header-anchor">#</a> 长链接</h3> <p>减少服务器维护因为与客户端建立http连接产生的大量tcp三次握手四次断开的开销</p> <div class="language-js extra-class"><pre class="language-js"><code>keepalive_timeout  <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token number">0</span>代表关闭
+#keepalive_timeout  <span class="token number">100</span><span class="token punctuation">;</span>
+#keepalive_requests <span class="token number">8192</span><span class="token punctuation">;</span>
+</code></pre></div><div style="margin-top:50px;"></div> <h3 id="压缩"><a href="#压缩" class="header-anchor">#</a> 压缩</h3> <p>降低传输时间，增加用户体验度；降低公司带宽费用。</p> <div class="language-js extra-class"><pre class="language-js"><code>gzip  on<span class="token punctuation">;</span>
+gzip_proxied any<span class="token punctuation">;</span>
+gzip_min_length <span class="token number">1</span>k<span class="token punctuation">;</span>
+gzip_buffers <span class="token number">4</span> <span class="token number">8</span>k<span class="token punctuation">;</span>
+gzip_comp_level <span class="token number">6</span><span class="token punctuation">;</span>
+gzip_types text<span class="token operator">/</span>plain text<span class="token operator">/</span>css application<span class="token operator">/</span>x<span class="token operator">-</span>javascript application<span class="token operator">/</span>javascript application<span class="token operator">/</span>xml<span class="token punctuation">;</span>
+
+# 开启gzip
+  gzip off<span class="token punctuation">;</span>
+
+#gzip_proxied，Nginx做为反向代理的时候启用：
+	off – 关闭所有的代理结果数据压缩
+	expired – 如果header中包含”Expires”头信息，启用压缩
+	no<span class="token operator">-</span>cache – 如果header中包含”Cache<span class="token operator">-</span>Control<span class="token operator">:</span>no<span class="token operator">-</span>cache”头信息，启用压缩
+	no<span class="token operator">-</span>store – 如果header中包含”Cache<span class="token operator">-</span>Control<span class="token operator">:</span>no<span class="token operator">-</span>store”头信息，启用压缩
+	<span class="token keyword">private</span> – 如果header中包含”Cache<span class="token operator">-</span>Control<span class="token operator">:</span><span class="token keyword">private</span>”头信息，启用压缩
+	no_last_modified – 启用压缩，如果header中包含”Last_Modified”头信息，启用压缩
+	no_etag – 启用压缩，如果header中包含“ETag”头信息，启用压缩
+	auth – 启用压缩，如果header中包含“Authorization”头信息，启用压缩
+	any – 无条件压缩所有结果数据
+
+# 启用gzip压缩的最小文件，小于设置值的文件将不会压缩
+  gzip_min_length <span class="token number">1</span>k<span class="token punctuation">;</span>
+
+# gzip 压缩级别，<span class="token number">1</span><span class="token operator">-</span><span class="token number">9</span>，数字越大压缩的越好，也越占用<span class="token constant">CPU</span>时间，后面会有详细说明
+  gzip_comp_level <span class="token number">1</span><span class="token punctuation">;</span>
+
+# 进行压缩的文件类型。javascript有多种形式。其中的值可以在 mime<span class="token punctuation">.</span>types 文件中找到。
+  gzip_types text<span class="token operator">/</span>plain application<span class="token operator">/</span>javascript application<span class="token operator">/</span>x<span class="token operator">-</span>javascript text<span class="token operator">/</span>css application<span class="token operator">/</span>xml text<span class="token operator">/</span>javascript application<span class="token operator">/</span>x<span class="token operator">-</span>httpd<span class="token operator">-</span>php image<span class="token operator">/</span>jpeg image<span class="token operator">/</span>gif image<span class="token operator">/</span>png application<span class="token operator">/</span>vnd<span class="token punctuation">.</span>ms<span class="token operator">-</span>fontobject font<span class="token operator">/</span>ttf font<span class="token operator">/</span>opentype font<span class="token operator">/</span>x<span class="token operator">-</span>woff image<span class="token operator">/</span>svg<span class="token operator">+</span>xml<span class="token punctuation">;</span>
+
+# 增加响应头”Vary<span class="token operator">:</span> Accept<span class="token operator">-</span>Encoding”，是否在http header中添加Vary<span class="token operator">:</span> Accept<span class="token operator">-</span>Encoding，建议开启
+  gzip_vary on<span class="token punctuation">;</span>
+
+# 禁用<span class="token constant">IE</span> <span class="token number">6</span> gzip
+  gzip_disable <span class="token string">&quot;MSIE [1-6]\.&quot;</span><span class="token punctuation">;</span>
+
+# 设置压缩所需要的缓冲区大小     
+  gzip_buffers <span class="token number">32</span> <span class="token number">4</span>k<span class="token punctuation">;</span>
+
+# 设置gzip压缩针对的<span class="token constant">HTTP</span>协议版本
+  gzip_http_version <span class="token number">1.0</span><span class="token punctuation">;</span>
+</code></pre></div><div style="margin-top:50px;"></div> <h3 id="静态缓存"><a href="#静态缓存" class="header-anchor">#</a> 静态缓存</h3> <p>将部分数据缓存在用户本地磁盘，用户加载时，如果本地和服务器的数据一致，则从本地加载。提升用户访问速度，提升体验度。节省公司带宽成本。</p> <div class="language-js extra-class"><pre class="language-js"><code>#expires指令：开启缓存并指定静态缓存时间
+location <span class="token operator">~</span><span class="token operator">*</span>  \<span class="token punctuation">.</span><span class="token punctuation">(</span>png<span class="token operator">|</span>gif<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+  expires <span class="token number">1</span>h<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div style="margin-top:50px;"></div> <h3 id="🔗相关链接"><a href="#🔗相关链接" class="header-anchor">#</a> 🔗相关链接</h3></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/专题/Nginx/URL重写.html" class="prev">
+        URL重写
+      </a></span> <span class="next"><a href="/专题/Nginx/Nginx缓存.html">
+        Nginx缓存
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.1e0ff288.js" defer></script><script src="/assets/js/2.4ba73d99.js" defer></script><script src="/assets/js/42.1dcb925d.js" defer></script>
+  </body>
+</html>

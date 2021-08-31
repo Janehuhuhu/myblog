@@ -9,7 +9,6 @@ module.exports = {
   //下面涉及到的md文件和其他文件的路径下一步再详细解释
   themeConfig: {
     logo: '/logo.jpeg',  //网页顶端导航栏左上角的图标
-
     //顶部导航栏
     nav: [
       //格式一：直接跳转，'/'为不添加路由，跳转至首页
@@ -123,5 +122,6 @@ module.exports = {
         },
       ]
     }
-  }
+  },
+  dest: 'public',
 }
