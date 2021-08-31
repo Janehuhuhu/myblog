@@ -17,6 +17,6 @@
 多个 `commit` 合并成一个
 <div style='margin-top: 50px'></div>
 
-### 🔗 相关链接
+### 🔗 相关链接2
 - [git amend](https://zhuanlan.zhihu.com/p/100243017)
 - [git rebase -i](https://blog.51cto.com/u_15230485/2821427)
