@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>双向绑定 | 小生天地</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpeg">
+    <meta name="description" content="小生学习天地">
+    
+    <link rel="preload" href="/assets/css/0.styles.c8e23b86.css" as="style"><link rel="preload" href="/assets/js/app.3655608f.js" as="script"><link rel="preload" href="/assets/js/2.e83ebbf9.js" as="script"><link rel="preload" href="/assets/js/22.66e57d40.js" as="script"><link rel="prefetch" href="/assets/js/10.53fa9364.js"><link rel="prefetch" href="/assets/js/11.d4ade188.js"><link rel="prefetch" href="/assets/js/12.c05a3356.js"><link rel="prefetch" href="/assets/js/13.3a9d4170.js"><link rel="prefetch" href="/assets/js/14.f3f518b1.js"><link rel="prefetch" href="/assets/js/15.090cc4e6.js"><link rel="prefetch" href="/assets/js/16.c12119d5.js"><link rel="prefetch" href="/assets/js/17.c0f6be94.js"><link rel="prefetch" href="/assets/js/18.0c250965.js"><link rel="prefetch" href="/assets/js/19.4672f52a.js"><link rel="prefetch" href="/assets/js/20.8106eb54.js"><link rel="prefetch" href="/assets/js/21.8f09e617.js"><link rel="prefetch" href="/assets/js/23.0f20d4d8.js"><link rel="prefetch" href="/assets/js/3.2293ae9f.js"><link rel="prefetch" href="/assets/js/4.5b970e20.js"><link rel="prefetch" href="/assets/js/5.9dde93e4.js"><link rel="prefetch" href="/assets/js/6.7ff3b843.js"><link rel="prefetch" href="/assets/js/7.9978ed26.js"><link rel="prefetch" href="/assets/js/8.e7f013f7.js"><link rel="prefetch" href="/assets/js/9.26a81b9d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c8e23b86.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpeg" alt="小生天地" class="logo"> <span class="site-name can-hide">小生天地</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/dwanda" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/dwanda" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="双向绑定"><a href="#双向绑定" class="header-anchor">#</a> 双向绑定</h1> <h2 id="_1-原理"><a href="#_1-原理" class="header-anchor">#</a> 1. 原理</h2> <p><a href="https://juejin.cn/post/6844903479044112391" target="_blank" rel="noopener noreferrer">vue 双向绑定原理及实现<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <br> <br> <br></p> <h2 id="_2-v-model-的用法"><a href="#_2-v-model-的用法" class="header-anchor">#</a> 2. v-model 的用法</h2> <h3 id="_2-1-基础用法"><a href="#_2-1-基础用法" class="header-anchor">#</a> 2.1 基础用法</h3> <p><a href="https://cn.vuejs.org/v2/guide/forms.html" target="_blank" rel="noopener noreferrer">v-model 在各种类型表单元素中的用法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <br> <br></p> <h3 id="_2-2-自定义组件使用-v-model"><a href="#_2-2-自定义组件使用-v-model" class="header-anchor">#</a> 2.2 自定义组件使用 v-model</h3> <p><code>v-model</code> 在内部为不同的输入元素使用不同的 <code>property</code> 并抛出不同的事件：</p> <ul><li><code>text</code> 和 <code>textarea</code> 元素使用 <code>value</code> property 和 <code>input</code> 事件；</li> <li><code>checkbox</code> 和 <code>radio</code> 使用 <code>checked</code> property 和 <code>change</code> 事件；</li> <li><code>select</code> 字段将 <code>value</code> 作为 prop 并将 <code>change</code> 作为事件。
+自定义组件直接使用 <code>v-model</code> 不会生效，需要使用原理自定义(利用动态属性赋值 :xx=data，事件监听将表单元素值赋值给属性数据, @xx=...)，对此需分为以下两类：
+<br></li></ul> <h4 id="_1-文本框类"><a href="#_1-文本框类" class="header-anchor">#</a> 1) 文本框类</h4> <p>一个组件上的 <code>v-model</code> 默认会利用名为 <code>value</code> 的 prop 和名为 <code>input</code> 的事件, 所以对于文本框类在自定义组件中定义双向绑定时不需要额外定义 <code>model</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 默认为input prop 和 input 事件</span>
+<span class="token operator">&lt;</span>base<span class="token operator">-</span>input v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">'message'</span><span class="token operator">&gt;</span>
+
+<span class="token comment">// message 会传入这个名为value 的prop</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'base-input'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// 必须传入</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  &lt;div&gt;
+  &lt;input
+    v-bind:value=&quot;value&quot;
+    v-on:input=&quot;$emit('input', $event.target.value)&quot;
+  &gt;
+  &lt;/div&gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><br> <h4 id="_2-复选框类"><a href="#_2-复选框类" class="header-anchor">#</a> 2) 复选框类</h4> <p>这里的 <code>lovingVue</code> 的值将会传入这个名为 <code>checked</code> 的 prop。同时当 <code>&lt;base-checkbox&gt;</code> 触发一个 <code>change</code> 事件并附带一个新的值的时候，这个 <code>lovingVue</code> 的 property 将会被更新。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>base<span class="token operator">-</span>checkbox v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">&quot;lovingVue&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>base<span class="token operator">-</span>checkbox<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">&quot;base-checkbox&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  model<span class="token operator">:</span> <span class="token punctuation">{</span>
+    prop<span class="token operator">:</span> <span class="token string">&quot;checked&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 可自定义为abc</span>
+    event<span class="token operator">:</span> <span class="token string">&quot;change&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 可自定义为ABC</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;checked&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// abc</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  &lt;input
+  type=&quot;checkbox&quot;
+    v-bind:checked=&quot;checked&quot; // 可自定义为 =&quot;abc&quot;
+    v-on:change=&quot;$emit('change', $event.target.checked)&quot; // 可自定义为$emit('ABC', ..)
+  &gt;
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><br> <h4 id="_3-修饰符"><a href="#_3-修饰符" class="header-anchor">#</a> 3) 修饰符</h4> <h5 id="a-native"><a href="#a-native" class="header-anchor">#</a> a. native</h5> <p>要在自定义组件直接监听一个原生事件。这时，你可以使用 <code>v-on</code> 的 <code>.native</code> 修饰符：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 点击输入框显示光标时触发focus事件</span>
+<span class="token operator">&lt;</span>base<span class="token operator">-</span>input @focus<span class="token punctuation">.</span>native<span class="token operator">=</span><span class="token string">&quot;onFocus&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>base<span class="token operator">-</span>input<span class="token operator">&gt;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'base-input'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;input&gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>但是，<code>.native</code> 只能适用于原生事件来自于自定义组件的 <code>templete</code> 的根源素上</p> <p>如果上述 <code>templete</code> 中的 <code>input</code> 外又包裹了一层，仅用 <code>.native</code> 就不行了，为解决这个问题 <code>Vue</code> 提供了一个 <code>$listeners</code> property，它是一个对象，里面包含了作用在这个组件上的所有监听器</p> <div class="language-js extra-class"><pre class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'base-input'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">inputListeners</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">this</span>
+      <span class="token comment">// `Object.assign` 将所有的对象合并为一个新对象</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 我们从父级添加所有的监听器</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$listeners<span class="token punctuation">,</span>
+      <span class="token comment">// 然后我们添加自定义监听器，或覆写一些监听器的行为</span>
+        <span class="token punctuation">{</span>
+          <span class="token comment">// 这里确保组件配合 `v-model` 的工作</span>
+          <span class="token function-variable function">input</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            vm<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+     <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;div&gt;
+    &lt;input
+      v-bind:value=&quot;value&quot;
+      v-on=&quot;inputListeners&quot;
+    &gt;
+    &lt;/div&gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><br> <h5 id="b-sync"><a href="#b-sync" class="header-anchor">#</a> b. sync</h5> <p><code>.sync</code> 的用法很简单，不要被官网的描述蒙蔽。 其实是一种语法糖，简化自组件通过触发事件的方式修改父组件的动态属性值。</p> <ul><li>原方式</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>abc <span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">'title'</span> @handle<span class="token operator">=</span><span class="token string">'title = $event'</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>abc<span class="token operator">&gt;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'handle'</span><span class="token punctuation">,</span> <span class="token string">'改革'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;div @click='change'&gt;你还{{title}}&lt;/div&gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">'⛽️'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+</code></pre></div><br> <ul><li>.sync 方式</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>abc <span class="token operator">:</span>title<span class="token punctuation">.</span>sync<span class="token operator">=</span><span class="token string">'title'</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>abc<span class="token operator">&gt;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'update:title'</span><span class="token punctuation">,</span> <span class="token string">'改革'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;div @click='change'&gt;你还{{title}}&lt;/div&gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><br> <h5 id="c-lazy"><a href="#c-lazy" class="header-anchor">#</a> c. lazy</h5> <p>在默认情况下，<code>v-model</code> 在每次 <code>input</code> 事件(即输即生效)触发后将输入框的值与数据进行同步 。你可以添加 <code>lazy</code> 修饰符，从而转为在 <code>change</code> 事件(需要按下 <code>enter</code> 键生效)之后进行同步：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 在“change”时而非“input”时更新 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>input v<span class="token operator">-</span>model<span class="token punctuation">.</span>lazy<span class="token operator">=</span><span class="token string">&quot;msg&quot;</span><span class="token operator">&gt;</span>
+</code></pre></div><h5 id="d-number"><a href="#d-number" class="header-anchor">#</a> d. number</h5> <p>如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>input v<span class="token operator">-</span>model<span class="token punctuation">.</span>number<span class="token operator">=</span><span class="token string">&quot;age&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;number&quot;</span><span class="token operator">&gt;</span>
+</code></pre></div><p>这通常很有用，因为即使在 <code>type=&quot;number&quot;</code> 时，HTML 输入元素的值也总会返回字符串（typeof age 原为 string 类型）
+<br></p> <h5 id="e-trim"><a href="#e-trim" class="header-anchor">#</a> e. trim</h5> <p>如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>input v<span class="token operator">-</span>model<span class="token punctuation">.</span>trim<span class="token operator">=</span><span class="token string">&quot;msg&quot;</span><span class="token operator">&gt;</span>
+</code></pre></div><p>不是 <code></code> 被去除了首尾空白字符，而是输入框中输入的时候会自动去除首尾空白字符</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3655608f.js" defer></script><script src="/assets/js/2.e83ebbf9.js" defer></script><script src="/assets/js/22.66e57d40.js" defer></script>
+  </body>
+</html>

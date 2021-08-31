@@ -1,0 +1,55 @@
+#### 1. 通过类似于document.getElementByTagName('div')这种方式获取到的类数组，无法通过 forEach 进行遍历（可以通过for循环）；而通过document.querySelectorAll(div)可以通过forEach 进行遍历。
+
+（1）首先看 getElementByTagName 的这种情况
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/1.png" width="400" height="300">
+</p>                                                                                                 
+
+网页表现
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/2.png" width="400" height="300">
+</p> 
+
+（2）然后看 querySelectorAll 的这种情况
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/3.png" width="400" height="300">
+</p> 
+
+网页表现
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/4.png" width="400" height="300">
+</p> 
+
+#### 2. 通过 getElementBy** 获取这种方式获取到的数组是动态的；而 querySelectorAll 这种方式获取到的是静态的（但是如果是 querySelectorAll 获取到的dom内部发生的变化，依旧是会动态改变的）
+
+（1）首先我们看 getElementBy** 这种方式
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/5.png" width="400" height="300">
+</p> 
+
+网页表现
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/6.png" width="400" height="300">
+</p> 
+
+（2）我们可以看到尽管没有重新获取dom，liArr还是检测到了新加入的 li 标签。接下来我们看一下通过 querySelectorAll 这种方式获取到的dom列表。
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/7.png" width="400" height="300">
+</p> 
+
+网页表现
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/8.png" width="400" height="300">
+</p> 
+
+（3）接下来，我们将一个新的标签放到第一个li标签的内部。
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/9.png" width="400" height="300">
+</p> 
+
+网页表现
+<p align="center">
+  <img src="https://github.com/Janehuhuhu/study/blob/master/JS/images/10.png" width="400" height="300">
+</p> 
+
+可以发现，通过 querySelectorAll 获取到的dom并不是绝对静态的，添加到这些dom内部的变化，依旧可以检测到。
