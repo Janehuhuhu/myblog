@@ -69,7 +69,8 @@ module.exports = {
             ['Webpack/简介.md', '简介'],
             ['Webpack/sourcemap.md', 'sourcemap'],
             ['Webpack/prefetch.md', 'prefetch'],
-            ['Webpack/动态链接库和代码分割.md', '动态链接库和代码分割']
+            ['Webpack/动态链接库和代码分割.md', '动态链接库和代码分割'],
+            ['Webpack/babel对es模块的处理.md', 'babel对es模块的处理']
           ]
         },
         {
