@@ -35,3 +35,34 @@ jsome([{"id":1,"email":"Khalid@Morocco.ma","active":true},{"id":2,"email":"Someo
 `patch-package` 用打补丁的办法能快速修复第三方包的 *bug*, 而不用等待第三方包的修复。也可以适用于第三方包虽然修复了，但是又引入新 *bug* 的情况。[patch-package](https://www.npmjs.com/package/patch-package)
 
 快速使用：在 *node_modules* 中修复 *bug* 后，执行 *npx patch-package xxx*, 内部通过比较修复后和源码，生成 *.patch* 文件，提交后其他开发同学即可使用修复后的第三方包 [案例](https://juejin.cn/post/6962554654643191815)
+
+<div style='margin-top: 50px'></div>
+
+
+## autoesm
+`Node@13` 原生支持运行 *es6* 模块，但是需要在 *package.json* 的 *type* 中指定 *type: module*，或者导入 *.mjs* 后缀的文件 [type字段](https://blog.csdn.net/huzhenv5/article/details/105232187)
+
+举例：都必须是 *mjs* 后缀才能运行，或者在最近的 *package.json* 中添加 *type*
+```js
+// a.mjs
+export default function main() {
+  console.log('aaaaa')
+}
+
+// b.mjs
+import a from './a.mjs'
+a()
+```
+
+在项目中安装 *autoesm* (全局不行), 运行命令 *node --experimental-loader autoesm b.js* 即可。[autoesm](https://github.com/dy/autoesm)
+
+```js 
+// a.js
+export default function main() {
+  console.log('aaaaa')
+}
+
+// b.js
+import a from './a.js'
+a()
+```
