@@ -40,7 +40,7 @@ jsome([{"id":1,"email":"Khalid@Morocco.ma","active":true},{"id":2,"email":"Someo
 
 
 ## autoesm
-`Node@13` 原生支持运行 *es6* 模块，但是需要在 *package.json* 的 *type* 中指定 *type: module*，或者导入 *.mjs* 后缀的文件 [type字段](https://blog.csdn.net/huzhenv5/article/details/105232187)
+`Node@13` 原生支持运行 *es6* 模块(import 语法)，但是需要在 *package.json* 的 *type* 中指定 *type: module*，或者导入 *.mjs* 后缀的文件 [type字段](https://blog.csdn.net/huzhenv5/article/details/105232187)
 
 举例：都必须是 *mjs* 后缀才能运行，或者在最近的 *package.json* 中添加 *type*
 ```js
