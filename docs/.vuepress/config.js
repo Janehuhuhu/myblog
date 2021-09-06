@@ -13,6 +13,7 @@ module.exports = {
     nav: [
       //格式一：直接跳转，'/'为不添加路由，跳转至首页
       { text: '首页', link: '/' },
+      { text: '社区资讯', link: '/社区资讯/' },
 
       //格式二：添加下拉菜单，link指向的文件路径
       // {
@@ -27,7 +28,7 @@ module.exports = {
       // { text: '功能演示', link: '/pages/folder1/test3.md' },
 
       //格式三：跳转至外部网页，需http/https前缀
-      { text: 'Github', link: 'https://github.com/dwanda' },
+      { text: 'Github', link: 'https://github.com/Janehuhuhu' },
     ],
 
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
