@@ -2,7 +2,7 @@
 ## jsome
 **2021-09-06**
 ### 简介
-美化在控制台打印的 `json`
+美化在控制台打印的 `json` [jsome](https://github.com/Javascipt/Jsome)
 <div style='margin-top: 30px'></div>
 
 ### 举例
@@ -19,16 +19,24 @@ jsome([{"id":1,"email":"Khalid@Morocco.ma","active":true},{"id":2,"email":"Someo
 
 <img src='./imgs/jsome.png' width='350px'>
 
-<div style='margin-top: 30px'></div>
+<div style='margin-top: 100px'></div>
 
-### 🔗 链接
-- [jsome](https://github.com/Javascipt/Jsome)
-<div style='margin-top: 50px'></div>
+
+
+
+
+
+
 
 ## parse-domain
 解析一个主机名为域名、子域名、定级域名 [parse-domain](https://github.com/peerigon/parse-domain)
 
-<div style='margin-top: 50px'></div>
+<div style='margin-top: 100px'></div>
+
+
+
+
+
 
 
 ## patch-package
@@ -36,7 +44,12 @@ jsome([{"id":1,"email":"Khalid@Morocco.ma","active":true},{"id":2,"email":"Someo
 
 快速使用：在 *node_modules* 中修复 *bug* 后，执行 *npx patch-package xxx*, 内部通过比较修复后和源码，生成 *.patch* 文件，提交后其他开发同学即可使用修复后的第三方包 [案例](https://juejin.cn/post/6962554654643191815)
 
-<div style='margin-top: 50px'></div>
+<div style='margin-top: 100px'></div>
+
+
+
+
+
 
 
 ## autoesm
@@ -66,3 +79,18 @@ export default function main() {
 import a from './a.js'
 a()
 ```
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+## ain
+**2021-09-07**
+
+一种终端类型的 *HTTP API* 客户端。简单来说，就是可以在终端定义访问的接口参数，并通过终端直接访问接口，有点类似于终端版的 *postman* 。可以支持 *curl, wget or httpie* 三种命令行 [Ain](https://github.com/jonaslu/ain)
+<div style='margin-top: 100px'></div>
+
+
+
