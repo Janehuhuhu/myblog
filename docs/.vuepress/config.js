@@ -101,12 +101,7 @@ module.exports = {
           collapsable: true, 
           sidebarDepth: 1,    
           children: [
-            ['vue全家桶/Vue的使用/可复用和组合.md', '可复用和组合'],
-            ['vue全家桶/Vue的使用/history和hash模式.md', 'history和hash模式'],
-            ['vue全家桶/Vue的使用/组件库.md', '组件库'],
-            ['vue全家桶/Vue的使用/pluginAPI.md', 'pluginAPI'],
-            ['vue全家桶/Vue的使用/GeneratorAPI.md', 'GeneratorAPI'],
-            ['vue全家桶/Vue的使用/package.json中的main.md', 'package.json中的main'],
+            ['vue全家桶/Vue的使用/vue基础.md', 'vue基础'],
           ]
         },
         {
