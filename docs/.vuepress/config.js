@@ -14,6 +14,7 @@ module.exports = {
       //格式一：直接跳转，'/'为不添加路由，跳转至首页
       { text: '首页', link: '/' },
       { text: '社区资讯', link: '/社区资讯/' },
+      { text: 'mysql', link: '/数据库/MYSQL/' },
 
       //格式二：添加下拉菜单，link指向的文件路径
       // {
