@@ -94,3 +94,28 @@ a()
 
 
 
+
+
+
+## cac
+**2021-09-09**
+
+`Command And Conquer` 是一个用于构建 `CLI` 应用程序的 `JavaScript` 库, 本质上和 `commander` 类似，一些 `api` 封装的更好些，其他暂时没有看出更大的优势 [cac](https://github.com/cacjs/cac)
+
+```js
+// commander
+const program = require('commander')
+program
+  .command('help')
+  .description('帮助')
+  .action(() => {
+    program.outputHelp()
+  })
+
+// cac
+const cli = require('cac')()
+cli.help()
+```
+
+
+
