@@ -116,6 +116,20 @@ program
 const cli = require('cac')()
 cli.help()
 ```
+<div style='margin-top: 100px'></div>
 
 
+
+
+
+
+
+
+
+
+
+## package-size
+**2021-09-14**
+
+`package-size` 可以方便的计算某个包的大小，也可以计算某个文件的大小(一般指定了某个文件，其他同项目的大小都是之前指定的文件大小)[package-size](https://github.com/egoist/package-size)
 
