@@ -368,6 +368,12 @@ webpackConfig
 ```
 <div style='margin-top: 50px'></div>
 
+### 二次加载问题（待验证）
+- [二次加载](https://juejin.cn/post/6844903562070196237)
+- [crossorigin](https://juejin.cn/post/6969825311361859598)
+
+<div style='margin-top: 50px'></div>
+
 ### 🔗相关链接
 - [prefetch 和 preload](https://juejin.cn/post/6844904142402502669)
 - [link标签的rel属性](https://zhuanlan.zhihu.com/p/150231042)
