@@ -132,4 +132,37 @@ cli.help()
 **2021-09-14**
 
 `package-size` 可以方便的计算某个包的大小，也可以计算某个文件的大小(一般指定了某个文件，其他同项目的大小都是之前指定的文件大小)[package-size](https://github.com/egoist/package-size)
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+## cz-emoji
+允许您使用 `commitizen` 在提交中轻松使用表情符号, 在展示效果前，先回顾下 `commitizen`, 它实际上为一种约束提交的 `message` 的工具，需要配合具体的规范使用（如 *cz-conventional-changelog* ）[cz-emoji](https://github.com/ngryman/cz-emoji)
+```js
+// 安装规范和cli
+yarn add commitizen cz-conventional-changelog
+
+// 配置
+"script": {
+    ...,
+    "commit": "git cz",
+},
+ "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+```
+
+效果如下：
+<img src="./imgs/commitizen.png">
+<div style='margin-top: 30px'></div>
+
+使用 `cz-emoji` 效果如下，多加了几个表情
+<img src="./imgs/cz-emoji.png">
+<div style='margin-top: 100px'></div>
+
 
