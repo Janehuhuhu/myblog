@@ -92,9 +92,7 @@ module.exports = {
           collapsable: true, 
           sidebarDepth: 1,    
           children: [
-            ['npm/npm 安装原理.md', 'npm 安装原理'],
-            ['npm/npm 发包.md', 'npm 发包'],
-            ['npm/pnpm和yarn2.md', 'pnpm 和 yarn2'],
+            ['npm/npm基础.md', 'npm基础'],
           ]
         },
         {

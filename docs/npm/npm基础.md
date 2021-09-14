@@ -1,6 +1,24 @@
-### pnpm 和 yarn2
-***
+## npm install原理
+[npm install原理](https://cloud.tencent.com/developer/article/1555982)
+<div style='margin-top: 100px'></div>
 
+
+
+
+
+## npm - 发包注意事项
+[发包基础](https://juejin.cn/post/6844903870678695943?utm_source=weibo&utm_campaign=user%3Futm_source%3Dweibo&utm_campaign=user)、[npm version常用命令](https://blog.csdn.net/weixin_40817115/article/details/90384398)
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+## pnpm 和 yarn2
 ### 为什么会引入pnpm和yarn2的概念
 项目中需要获取包版本，使用了 `node_modules`，具体如下:
 ```js
@@ -39,3 +57,44 @@ majorVersion = get(version, '0')
 ### yarn2知识扫盲
 `yarn2` 将不再存在 `node_modules` 文件夹，所有的依赖都会被压缩成一个文件放在特定的地方
 - [yarn2功能](https://zhuanlan.zhihu.com/p/107343333)
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+## FAQ
+##### 1. 报错：name cannot start with an underscore; name can only contain URL-friendly characters
+
+```js
+场景：在没有通过npm init初始化目录的情况下，直接通过cnpm命令安装模块，在卸载模块时报错
+原因分析：通过cnpm命令安装模块时，会同时生成带下划线的文件（eg: _jquery@3.4.1@jquery)，不符合命名规范（根据报错提示）
+解决方案：
+　- 方案一：安装模块时用npm，非cnpm(不建议)
+　- 方案二：先通过npm init初始化目录，生成包管理文件package.json，再安装模块（npm/cnpm）　
+  - 方案三：安装包时后面加-D，会自动生成package.json文件
+  ## 如果无法卸载，可直接安装另一版本覆盖。
+```
+##### 2. xxxxx is not a loader (must have normal or pitch function)
+
+```js
+某安装包版本不匹配。
+```
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+## npmrc 生效问题
+- 在终端执行 *yarn add xxx*, 读取配置优先级为项目配置、用户、全局、*npm* 本身的配置，*yarn* 和 *npm* 读取的都是 *.npmrc* 的配置
+
+- 在子进程中，*yarn* 读取的是配置全局 *yarnrc*，项目用户配置 *npmrc、yarnrc* 均不生效。*npm* 命令读取的是 *.npmrc*, 优先级同【1】
+[npmrc配置优先级](https://yanyinhong.github.io/2017/05/01/The-priority-of-npm-config/)
+[npmrc配置方式](https://juejin.cn/post/6983522411647860766)
