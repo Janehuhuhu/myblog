@@ -912,3 +912,23 @@ genCacheConfig (id, partialIdentifier, configFiles) {
 - [eslint-loader](https://www.npmjs.com/package/eslint-loader)
 
 <div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## loadmodule
+*loadmodule* 可以直接获取到项目中的依赖版本，如果直接用 *require* 获取的是依赖中的子依赖
+```js
+const { loadModule } = require('@vue/cli-shared-utils')
+const pkg = loadModule(`${name}/package.json`, cwd, true) || {}
+```
+<div style='margin-top: 100px'></div>
