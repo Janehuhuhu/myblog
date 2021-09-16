@@ -1,5 +1,275 @@
-#### 1.完美运动框架
-&nbsp;&nbsp;适用于多物体、多属性、链式运动，是比较完美的运动框架。 offsetWidth等方式获取的属性值包含width、padding、border，所以如果用该方式获取包含border的对象宽度会造成物体运动出现反常，所以利用函数getStyle获取属性值。
+## 延时提示框      
+&nbsp;&nbsp;a. 基本功能：移入红框(div1)时，灰框(div2)显示；移出时，灰框消失；  
+&nbsp;&nbsp;b. 注意：红框移入灰框时，需要灰框显示，所以需要定时器；灰框移入红框时，为避免闪动，所以需用定时器；  
+   <p align='center'>
+      <img src='./images/11.png' width='200px' height='150px'>
+   </p>
+   
+&nbsp;&nbsp;c. 代码 
+   
+   ```js  
+      var oDiv1 = document.getElementById('div1');
+      var oDiv2 = document.getElementById('div2');
+      var timer = null;
+      oDiv1.onmouseover = oDiv2.onmouseover = function () {
+         clearTimerout(timer);
+         oDiv2.style.display = 'block';  //oDiv2.onmouseover部分本可以不加(为了代码合并复用)
+      }
+      oDiv1.onmouseout = oDiv2.onmouseout = function () {
+         timer = setTimeout(function () {
+            oDiv2.style.display = 'none';
+         }, 500);
+      }  
+   ```
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ## 无缝滚动(原生)  
+  &nbsp;&nbsp;a. 注意：添加一倍的图片，向左移动时，左边距小于长度一半时，图片拖到最左边；向右移动时，左边距大于0时，图片拖到一半处；  
+  <p align='center'>
+    <img src='./images/12.gif' width='500px' height='150px'>
+  </p>
+  &nbsp;&nbsp;b. 代码  
+   
+   ```js
+  <script>
+      var oDiv = document.getElementById('div1');
+      var oUl = oDiv.getElementsByTagName('ul')[0];
+      var aLi = oUl.getElementsByTagName('li');
+      var speed = -2;  // 速度
+      oUl.innerHTML += oUl.innerHTML;  // 增加一倍图片
+      oUl.style.width = aLi[0].offsetWidth * aLi.length+'px'; // offsetWidth：图片宽度
+      
+      // 移动
+      function move() {
+         if (oUl.offsetLeft < -oUl.offsetWidth/2) {  // offsetLeft：左边距
+            oUl.style.left = '0';
+         }
+         if (oUl.offsetLeft > 0) {
+            oUl.style.left =- oUl.offsetWidth/2 + 'px';
+         }
+         oUl.style.left = oUl.offsetLeft + speed + 'px';
+      }
+      var timer = setInterval(move, 30);
+
+      // 移入
+      oDiv.onmouseover = function () {
+         clearInterval(timer);
+      };
+
+      // 移出
+      oDiv.onmouseout = function () {
+         timer = setInterval(move, 30);
+      };
+      
+      // 向左走
+      document.getElementsByTagName('a')[0].onclick = function () {
+         speed=-2;
+      };
+      
+      // 向右走
+      document.getElementsByTagName('a')[1].onclick=function () {
+         speed=2;
+      };
+   };
+</script>
+
+<style>
+   * {margin: 0; padding: 0;}
+   #div1 {width: 712px; height: 108px; margin: 100px auto; position: relative; background: red; overflow: hidden;}
+   #div1 ul {position: absolute; left: 0; top: 0;}
+   #div1 ul li {float: left; width: 178px; height: 108px; list-style: none;}
+</style>
+
+<body>
+   <a href="javascript:;">向左走</a>
+   <a href="javascript:;">向右走</a>
+   <div id="div1">
+       <ul>
+         <li><img src="img2/1.jpg" /></li>
+         <li><img src="img2/2.jpg" /></li>
+         <li><img src="img2/3.jpg" /></li>
+         <li><img src="img2/4.jpg" /></li>
+       </ul>
+   </div>
+</body>
+```
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 3d盒子和shadow
+### 3d盒子
+transform属性从后向前执行；先布局，再旋转。X,Y面旋转需要在该对象运动前后加perspective属性，使其有3d效果；z面运动（translateZ）需要在父级元素添加
+transform-style:preserve-3d;
+<p align='center'>
+    <img src='./images/14.gif' width='400px' height='300px'>
+</p>
+
+```js
+<style type="text/css">
+    * {margin: 0;padding:0;list-style: none;}
+    #div1 {width: 200px;height: 200px;background: rgba(0,0,0,0);float: left;
+        position: absolute;left: 50%;top: 50%;margin: -100px 0 0 -100px;
+        transform:perspective(800px) rotateX(-80deg);
+        transform-style:preserve-3d;
+    }
+    #div1 > div {width: 100%;height: 100%;position: absolute;
+        transition:1s;
+    }
+    #front {
+        transform:translateZ(100px);
+        background: yellow;
+    }
+    #after {
+        transform:translateZ(-100px);background: red;
+    }
+    #left {
+        transform:rotateY(90deg) translateZ(-100px) ;background: green;
+    }
+    #right {
+        transform:rotateY(-90deg) translateZ(-100px) ;background: blue;
+    }
+    #topNode {
+        transform:rotateX(90deg) translateZ(-100px) ;background: pink;
+    }
+    #bottom {
+        transform:rotateX(-90deg) translateZ(-100px) ;background: orange;
+    }
+</style>
+
+<div id='div1'>
+	<div id='front'></div>
+	<div id='after'></div>
+	<div id='left'></div>
+	<div id='right'></div>
+	<div id='topNode'></div>
+	<div id='bottom'></div>
+</div>
+
+<script type="text/javascript">
+// 旋转
+	var allDiv = div1.children;
+	var reg = 0;
+	setInterval (function () {
+		reg++;
+		div1.style.transform = 'perspective(800px) rotateX(' + (reg * 0.3) + 'deg) rotateY(' + 
+		(reg*0.2) + 'deg)';
+	}, 8);
+
+// 变色
+	setInterval(function () {
+		for(var i = 0; i < allDiv.length; i++){
+			allDiv[i].style.background = 'rgb(' + parseInt(Math.random() * 256) + ',' + parseInt(Math.random() 
+			* 256) + ',' + parseInt(Math.random() * 256) + ')';
+		}
+	}, 1000);
+</script>
+```
+<div style='margin-top: 50px'></div>
+
+
+
+### text-shadow 文字逐渐清晰
+通过修改文字的text-shadow属性，将原文字的透明度变为零，变清晰后的文字实际是阴影，而非原文字。
+<p align='center'>
+    <img src='./images/15.gif' width='400px' height='300px'>
+</p>
+    
+```js
+<style type="text/css">
+    * {margin: 0;padding: 0;list-style: none}
+    div {width: 200px;height: 200px;
+            position: absolute;left: 0;top: 0;bottom: 0;right: 0;margin: auto;border: 1px solid black;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+            text-shadow:0px 0px 100px black;
+            color: rgba(0,0,0,0);
+            transition:1s;
+    }
+    div:hover {
+        text-shadow:0px 0px 0px black;
+    }
+</style> 
+```
+<div style='margin-top: 50px'></div>
+
+
+
+
+
+
+### box-shadow 太阳阴影效应
+通过鼠标位置和屏幕宽度的比例关系设置box-shadow的水平和垂直阴影位置。
+<p align='center'>
+    <img src='./images/16.gif' width='400px' height='300px'>
+</p>
+    
+```js
+<style type="text/css">
+    * {margin: 0;padding: 0;list-style: none}
+    div {width: 200px;height: 200px;
+         position: absolute;left: 0;top: 0;bottom: 0;right: 0;margin: auto;
+             border: 1px solid black;box-shadow:30px -30px 10px 0px black;
+    }
+</style> 
+
+<script type="text/javascript">
+	max = 30;
+	document.onmousemove = function (e) {
+		var ev = e || event;
+		var needX = ev.clientX / innerWidth * -60 + 30;
+		var needY = ev.clientY / innerHeight * -60 + 30;
+		div1.style.boxShadow = needX + 'px ' + needY + 'px 10px 0px black';
+	}
+</script>
+```
+<div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 运动基础
+### 1.完美运动框架
+&nbsp;&nbsp;适用于多物体、多属性、链式运动，是比较完美的运动框架。 *offsetWidth* 等方式获取的属性值包含 *width、padding、border*，所以如果用该方式获取包含 *border* 的对象宽度会造成物体运动出现反常，所以利用函数 *getStyle* 获取属性值。
 
 ```js
 function startMove (obj, json, fnEnd) {
@@ -40,10 +310,15 @@ function getStyle (obj, name) {
 	}
 }
 ```
-#### 2.轮播图（原生）
+<div style='margin-top: 50px'></div>
+
+
+
+
+### 2.轮播图（原生）
 大图高先设置为0，再逐渐变为原高度，每次的index逐渐增加；小图的left逐渐变化，但需注意变化规律；
 <p align='center'>
-	<image src='https://github.com/Janehuhuhu/study/blob/master/JS/images/13.gif' width='400px' height='300px' />
+	<img src='./images/13.gif' width='400px' height='300px' />
 </p>
 
 ```js
@@ -131,7 +406,13 @@ window.onload = function () {
 };
 </script>
 ```
-#### 3.拖拽
+<div style='margin-top: 50px'></div>
+
+
+
+
+
+### 3.拖拽
 
 ```js
 <script>
@@ -171,9 +452,9 @@ oDiv.onmousedown = function (ev)
 </script>
 ```
 
-#### 4.轮播图（react）
+### 4.轮播图（react）
 <p align='center'>
-	<image src='https://github.com/Janehuhuhu/study/blob/master/JS/images/17.gif' width='400px' height='300px' />
+	<img src='./images/17.gif' width='400px' height='300px' />
 </p>
 
 ```js
@@ -299,11 +580,17 @@ oDiv.onmousedown = function (ev)
     ReactDOM.render(<Node/>, app)
   </script>
 ```
+<div style='margin-top: 50px'></div>
 
-#### 4.照片墙（react脚手架）
+
+
+
+
+
+### 4.照片墙（react脚手架）
 注意对一次点击和二次点击的处理与判断，e.target.classList 的contains 和add,remove方法
 <p align='center'>
-	<image src='https://github.com/Janehuhuhu/study/blob/master/JS/images/19.gif' width='400px' height='300px' />
+	<img src='./images/19.gif' width='400px' height='300px' />
 </p>
 
 ```js
@@ -396,4 +683,24 @@ class Tab extends Component {
 
 export default Tab;
 ```
+<div style='margin-top: 100px'></div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

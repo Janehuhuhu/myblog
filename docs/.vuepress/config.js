@@ -76,7 +76,8 @@ module.exports = {
           collapsable: true, 
           sidebarDepth: 1,
           children: [
-            ['JS/iframe通信.md', 'iframe通信']
+            ['JS/js基础.md', 'js基础'],
+            ['JS/js应用.md', 'js应用']
           ]
         },
         {
