@@ -1,6 +1,7 @@
 [博客地址](https://myblog-janehuhuhu.vercel.app/)
-## jsome
+
 **2021-09-06**
+## jsome
 ### 简介
 美化在控制台打印的 `json` [jsome](https://github.com/Javascipt/Jsome)
 <div style='margin-top: 30px'></div>
@@ -86,8 +87,9 @@ a()
 
 
 
-## ain
+
 **2021-09-07**
+## ain
 
 一种终端类型的 *HTTP API* 客户端。简单来说，就是可以在终端定义访问的接口参数，并通过终端直接访问接口，有点类似于终端版的 *postman* 。可以支持 *curl, wget or httpie* 三种命令行 [Ain](https://github.com/jonaslu/ain)
 <div style='margin-top: 100px'></div>
@@ -97,8 +99,9 @@ a()
 
 
 
-## cac
+
 **2021-09-09**
+## cac
 
 `Command And Conquer` 是一个用于构建 `CLI` 应用程序的 `JavaScript` 库, 本质上和 `commander` 类似，一些 `api` 封装的更好些，其他暂时没有看出更大的优势 [cac](https://github.com/cacjs/cac)
 
@@ -127,9 +130,8 @@ cli.help()
 
 
 
-
-## package-size
 **2021-09-14**
+## package-size
 
 `package-size` 可以方便的计算某个包的大小，也可以计算某个文件的大小(一般指定了某个文件，其他同项目的大小都是之前指定的文件大小)[package-size](https://github.com/egoist/package-size)
 <div style='margin-top: 100px'></div>
@@ -165,4 +167,17 @@ yarn add commitizen cz-conventional-changelog
 <img src="./imgs/cz-emoji.png">
 <div style='margin-top: 100px'></div>
 
+
+
+
+
+
+
+
+
+
+**2021-09-17**
+## Checkboxland
+*Checkboxland* 是一个 *JavaScript* 库，用于将任何内容呈现为 *HTML* 复选框。可以用它来渲染出比较好看的动画，如计时器，只需要动态修改传入的 *data* 即可。[Checkboxland](https://github.com/bryanbraun/checkboxland) [效果图](https://www.bryanbraun.com/checkboxland/)
+<div style='margin-top: 100px'></div>
 
