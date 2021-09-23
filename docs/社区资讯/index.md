@@ -181,3 +181,16 @@ yarn add commitizen cz-conventional-changelog
 *Checkboxland* 是一个 *JavaScript* 库，用于将任何内容呈现为 *HTML* 复选框。可以用它来渲染出比较好看的动画，如计时器，只需要动态修改传入的 *data* 即可。[Checkboxland](https://github.com/bryanbraun/checkboxland) [效果图](https://www.bryanbraun.com/checkboxland/)
 <div style='margin-top: 100px'></div>
 
+
+
+
+
+
+
+
+**2021-09-23**
+
+## Consolidate
+一种模版引擎，我这里简单理解为可以在 *node* 中实现模版渲染的效果，即访问某个链接，可以直接在 *node* 端渲染模版并吐出页面 [Consolidate](https://github.com/tj/consolidate.js) [举例](https://tangjiusheng.com/web/qdkf/189.html)
+
+<div style='margin-top: 100px'></div>
