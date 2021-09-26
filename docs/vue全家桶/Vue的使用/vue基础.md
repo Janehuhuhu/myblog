@@ -932,3 +932,124 @@ const { loadModule } = require('@vue/cli-shared-utils')
 const pkg = loadModule(`${name}/package.json`, cwd, true) || {}
 ```
 <div style='margin-top: 100px'></div>
+
+
+
+
+
+
+
+
+
+
+
+## 配置文件
+*eslint*、*stylelint*、*commitlint*、*cz*、*prettier* 等配置文件是我们在静态分析和提交代码时常用的检测工具，下面主要简单对比下这几种工具如何配置
+
+### 1.eslint
+配置优先级: .eslintrc.js > .eslintrc.yaml > .eslintrc.yml > .eslintrc.json > .eslintrc > package.json [eslint config](https://eslint.bootcss.com/docs/user-guide/configuring)
+
+可在 *package.json* 中配置:
+```js
+{
+  "name": "mypackage",
+  "version": "0.0.1",
+  "eslintConfig": {
+      "env": {
+          "browser": true,
+          "node": true
+      }
+  },
+  "eslintIgnore": ["hello.js", "world.js"]
+}
+```
+如果想将 *eslintConfig* 依赖收敛至 *package.json*，可以写成如下形式：
+```js
+"eslintConfig": {
+  "extends":
+    "./node_modules/@xxx/xxx/dist/eslint.js" // 不加node_modules找不到文件
+}
+```
+注意：*eslintIgnore* 如果直接收敛到 *eslint* 必须是数组的形式，不能以包的形式展示
+
+### 2.stylelint
+配置优先级: package.json > .stylelintrc[|.json|.yaml|.js] > stylelint.config.js     [stylelint](https://cloud.tencent.com/developer/section/1489626)
+
+可在 *package.json* 中配置（无ignore字段）:
+```js
+"stylelint": { 
+  "extends": "@xxx/xxx/dist/stylelint" // 不加node_modules可以找到文件
+},
+```
+
+
+### 3.prettier
+配置优先级：package.json > .prettierrc > .prettierrc.json > .prettierrc.yaml > .prettierrc.yml > .prettierrc.js > .prettier.config.js > .prettierrc.toml  [prettier](https://jsweibo.github.io/2019/10/17/Prettier%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/)
+
+可在 *package.json* 中配置（无ignore字段）:
+```js
+"prettier": "@nibfe/rome-config/dist/prettier",
+```
+
+
+### 4.commitlint
+在执行 `git commit` 时进行的提交信息检测 [commitlint 规范](https://juejin.cn/post/6844903710112350221) [实例](https://github.com/WenHaoHuang/changelog-sn) [如何配置 Git Commit Message](https://zhuanlan.zhihu.com/p/69635847)
+```js
+// 安装
+yarn add @commitlint/config-conventional @commitlint/cli -D
+
+// package.json中
+"commitlint": {
+  "extends": [
+    "@commitlint/config-conventional" // 【校验规则】符合 Angular团队规范
+  ]
+}
+
+// 在 .commitlintrc.js 中
+module.exports = {
+  extends: ['@commitlint/config-conventional']
+}
+```
+
+配置收敛至自定义的包中写法：
+```js
+"commitlint": {
+  "extends": ["./node_modules/@xxx/xxx/dist/commitlint.js”] // 必须是数组
+},
+```
+
+### 5.cz
+可以用 *scripts* 命令进行提交信息校验
+```js
+"scripts": {
+  "commit": "git-cz"
+}
+```
+配置
+```js
+// 安装
+yarn add commitizen -D
+
+// 常规适配器
+yarn add cz-conventional-changelog -D
+
+// package.json
+"config": {
+  "commitizen": {
+    "path": "./node_modules/cz-conventional-changelog"
+  }
+}
+
+// 定制适配器
+yarn add cz-customizable -D
+
+"config": {
+  "commitizen": {
+    "path": "./node_modules/cz-customizable"
+  },
+  "cz-customizable": {
+    "config": "./node_modules/@xxx/xxx/dist/czConfig.js" 
+  }
+},
+```
+
