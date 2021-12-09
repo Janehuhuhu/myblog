@@ -113,6 +113,14 @@ module.exports = {
             ['GIT/揭秘commit丢失.md', '揭秘commit丢失']
           ]
         },
+        {
+          title: 'vscode', 
+          collapsable: true, 
+          sidebarDepth: 1,    
+          children: [
+            ['vscode/Hello World.md', 'vscode 插件开发(1) Hello World'],
+          ]
+        },
       ]
     }
   },
