@@ -163,3 +163,7 @@ export function activate(context: vscode.ExtensionContext) {
 </p>
 
 [示例代码](https://github.com/Janehuhuhu/vscode-plugin-demo)
+
+#### 5.参考文档
+- [vscode插件开发-helloWorld](https://www.jianshu.com/p/e4b2d4ffa983)
+- [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension)
