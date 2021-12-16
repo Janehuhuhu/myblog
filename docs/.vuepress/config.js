@@ -119,6 +119,7 @@ module.exports = {
           sidebarDepth: 1,    
           children: [
             ['vscode/Hello World.md', 'vscode 插件开发(1) Hello World'],
+            ['vscode/webview.md', 'vscode 插件开发(2) webview'],
           ]
         },
       ]
