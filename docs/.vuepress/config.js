@@ -94,6 +94,7 @@ module.exports = {
           sidebarDepth: 1,    
           children: [
             ['npm/npm基础.md', 'npm基础'],
+            ['npm/package.json.md', 'package.json'],
           ]
         },
         {
