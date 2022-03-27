@@ -1,6 +1,4 @@
 ### commit id 丢失的场景
-***
-
 ### 1. git reset —hard xx
 如果已经被 `push` 到远程仓库，`git reset —hard xx` 后再强推出去，那就看不到 `commit id`了
 <div style='margin-top: 50px'></div>

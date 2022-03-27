@@ -1,12 +1,12 @@
-## 1. npm install原理
+## npm install原理
 [npm install原理](https://cloud.tencent.com/developer/article/1555982)
 <div style='margin-top: 50px'></div>
 
-## 2. npm - 发包注意事项
+## npm - 发包注意事项
 [发包基础](https://juejin.cn/post/6844903870678695943?utm_source=weibo&utm_campaign=user%3Futm_source%3Dweibo&utm_campaign=user)、[npm version常用命令](https://blog.csdn.net/weixin_40817115/article/details/90384398)
 <div style='margin-top: 50px'></div>
 
-## 3. 修改 registry
+## 修改 registry
 ```js
 // 设置
 npm config set registry https://registry.npm.taobao.org 
@@ -24,7 +24,7 @@ npm install PACKAGE_NAME --registry https://registry.npm.taobao.org
 ```
 <div style='margin-top: 50px'></div>
 
-## 4. pnpm 和 yarn2
+## pnpm 和 yarn2
 ### 4.1 为什么会引入 pnpm 和 yarn2 的概念
 项目中需要获取包版本，使用了 `node_modules`，具体如下:
 ```js
@@ -66,7 +66,7 @@ majorVersion = get(version, '0')
 <div style='margin-top: 50px'></div>
 
 
-## 5. npmrc 生效问题
+## npmrc 生效问题
 - 在终端执行 *yarn add xxx*, 读取配置优先级为项目配置、用户、全局、*npm* 本身的配置，*yarn* 和 *npm* 读取的都是 *.npmrc* 的配置
 
 - 在子进程中，*yarn* 读取的是配置全局 *yarnrc*，项目用户配置 *npmrc、yarnrc* 均不生效。*npm* 命令读取的是 *.npmrc*, 优先级同 参考：
@@ -75,7 +75,7 @@ majorVersion = get(version, '0')
 
 <div style='margin-top: 50px'></div>
 
-## 6. FAQ
+## FAQ
 6.1 Q: 报错 *name cannot start with an underscore; name can only contain URL-friendly characters*
 
 A: 

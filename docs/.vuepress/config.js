@@ -1,3 +1,14 @@
+const nginxConfig = require('../nginx/config')
+const htmlConfig = require('../html/config')
+const cssConfig = require('../css/config')
+const npmConfig = require('../npm/config')
+const jsConfig = require('../js/config')
+const internetConfig = require('../internet/config')
+const gitConfig = require('../git/config')
+const vueConfig = require('../vue/config')
+const databaseConfig = require('../database/config')
+const nodeConfig = require('../node/config')
+
 module.exports = {
   title: '小生天地', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
   description: '小生学习天地', // meta 中的描述文字，用于SEO
@@ -13,117 +24,22 @@ module.exports = {
     nav: [
       //格式一：直接跳转，'/'为不添加路由，跳转至首页
       { text: '首页', link: '/' },
-      { text: '社区资讯', link: '/社区资讯/' },
-      { text: 'mysql', link: '/数据库/MYSQL/' },
-
-      //格式二：添加下拉菜单，link指向的文件路径
-      // {
-      //   text: '分类',  //默认显示        
-      //   ariaLabel: '分类',   //用于识别的label
-      //   items: [
-      //     { text: '文章', link: '/pages/folder1/test1.md' },
-      //     //点击标签会跳转至link的markdown文件生成的页面
-      //     { text: '琐碎', link: '/pages/folder2/test4.md' },
-      //   ]
-      // },
-      // { text: '功能演示', link: '/pages/folder1/test3.md' },
-
-      //格式三：跳转至外部网页，需http/https前缀
+      { text: '社区资讯', link: '/news/' },
       { text: 'Github', link: 'https://github.com/Janehuhuhu' },
     ],
 
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
     sidebar: {
-      '/': [
-        {
-          title: 'Nginx',   // 一级菜单名称
-          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
-          sidebarDepth: 1,    //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-          children: [
-            ['专题/Nginx/安装部署.md', '安装部署'],  //菜单名称为'子菜单1'，跳转至/pages/folder1/test1.md
-            ['专题/Nginx/常用nginx命令.md', '常用nginx命令'],
-            ['专题/Nginx/配置文件详解.md', '配置文件详解'],
-            ['专题/Nginx/默认网站.md', '默认网站'],
-            ['专题/Nginx/虚拟主机.md', '虚拟主机'],
-            ['专题/Nginx/反向代理.md', '反向代理'],
-            ['专题/Nginx/下载限速.md', '下载限速'],
-            ['专题/Nginx/URL重写.md', 'URL重写'],
-            ['专题/Nginx/Nginx优化.md', 'Nginx优化'],
-            ['专题/Nginx/Nginx缓存.md', 'Nginx缓存'],
-            ['专题/Nginx/Nginx镜像服务器.md', 'Nginx缓镜像服务器'],
-            ['专题/Nginx/Nginx集群.md', 'Nginx集群'],
-          ]
-        },
-        {
-          title: 'HTML & CSS',
-          collapsable: true, 
-          sidebarDepth: 1,
-          children: [
-            ['HTML & CSS/lang属性.md', 'lang属性'],
-            ['HTML & CSS/tailwind.md', 'taildwind']
-          ]
-        },
-        {
-          title: 'Webpack',
-          collapsable: true, 
-          sidebarDepth: 1,
-          children: [
-            ['Webpack/webpack基础.md', 'webpack基础'],
-          ]
-        },
-        {
-          title: 'JS',
-          collapsable: true, 
-          sidebarDepth: 1,
-          children: [
-            ['JS/js基础.md', 'js基础'],
-            ['JS/js应用.md', 'js应用']
-          ]
-        },
-        {
-          title: '计算机网络', 
-          collapsable: true, 
-          sidebarDepth: 1,    
-          children: [
-            ['专题/计算机网络/charles.md', 'charles'],
-          ]
-        },
-        {
-          title: 'npm', 
-          collapsable: true, 
-          sidebarDepth: 1,    
-          children: [
-            ['npm/npm基础.md', 'npm基础'],
-            ['npm/package.json.md', 'package.json'],
-          ]
-        },
-        {
-          title: 'Vue', 
-          collapsable: true, 
-          sidebarDepth: 1,    
-          children: [
-            ['vue全家桶/Vue的使用/vue基础.md', 'vue基础'],
-          ]
-        },
-        {
-          title: 'GIT', 
-          collapsable: true, 
-          sidebarDepth: 1,    
-          children: [
-            ['GIT/常用命令.md', '常用命令'],
-            ['GIT/揭秘commit丢失.md', '揭秘commit丢失']
-          ]
-        },
-        {
-          title: 'vscode', 
-          collapsable: true, 
-          sidebarDepth: 1,    
-          children: [
-            ['vscode/Hello World.md', 'vscode 插件开发(1) Hello World'],
-            ['vscode/webview.md', 'vscode 插件开发(2) webview'],
-          ]
-        },
-      ]
+      ...nginxConfig,
+      ...htmlConfig,
+      ...cssConfig,
+      ...npmConfig,
+      ...internetConfig,
+      ...gitConfig,
+      ...jsConfig,
+      ...vueConfig,
+      ...databaseConfig,
+      ...nodeConfig,
     }
   },
   dest: 'public',
