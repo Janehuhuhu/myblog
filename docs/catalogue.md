@@ -7,7 +7,7 @@
 - [git](/git/常用命令)
 - [npm](/npm/npm基础)
 
-- [计算机网络](/internet/charles)
+- [计算机网络](/internet/抓包工具)
 - [Nginx](/nginx/安装部署)
 - [数据库](/database/mysql/index)
 - [node](/node/node框架/anywhere)

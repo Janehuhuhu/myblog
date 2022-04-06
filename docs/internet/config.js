@@ -1,5 +1,5 @@
 module.exports = {
   '/internet/': [
-    '/internet/charles'
+    '/internet/抓包工具'
   ]
 }
