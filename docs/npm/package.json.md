@@ -16,3 +16,24 @@
 `npm3` 中不会再要求 `peerDependencies` 所指定的依赖包被强制安装，相反 `npm3` 会在安装结束后检查本次安装是否正确，如果不正确会给用户打印警告提示。[参考](https://www.cnblogs.com/wonyun/p/9692476.html)<br>
 
 注意点：`peerDependencies` 并不会帮你安装依赖，只是使用宿主环境的依赖，如果 `npm3` 版本不合适，只会 `warning`
+<div style='margin-top: 50px'></div>
+
+
+## resolutions
+`yarn` 通过识别 `package.json` 中的 `resolutions` 字段，来强制指定子依赖的版本。如你可能会依赖一个不经常更新的软件包,而这个软件包依赖于另一个有重要升级的软件包，在这种情况下,如果你的直接依赖所指定的版本范围没有涵盖新的子依赖版本,你就只能等待作者。[详情说明](https://runebook.dev/zh-CN/docs/yarn/selective-version-resolutions)
+
+```js
+{
+  "name": "project",
+  "version": "1.0.0",
+  "dependencies": {
+    "left-pad": "1.0.0",
+    "c": "file:../c-1",
+    "d2": "file:../d2-1"
+  },
+  "resolutions": {
+    "d2/left-pad": "1.1.1",
+    "c/**/left-pad": "^1.1.2"
+  }
+}
+```
