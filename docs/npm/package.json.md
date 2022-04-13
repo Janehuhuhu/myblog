@@ -13,6 +13,6 @@
 
 在 `npm2` 中，`PackageA` 包中 `peerDependencies` 所指定的依赖会随着 `npm install PackageA` 一起被强制安装，所以不需要在宿主环境的 `package.json` 文件中指定对 `PackageA` 中`peerDependencies` 内容的依赖 。<br>
 
-`npm3` 中不会再要求 `peerDependencies` 所指定的依赖包被强制安装，相反 `npm3` 会在安装结束后检查本次安装是否正确，如果不正确会给用户打印警告提示。[参考](https://www.cnblogs.com/wonyun/p/9692476.html)
+`npm3` 中不会再要求 `peerDependencies` 所指定的依赖包被强制安装，相反 `npm3` 会在安装结束后检查本次安装是否正确，如果不正确会给用户打印警告提示。[参考](https://www.cnblogs.com/wonyun/p/9692476.html)<br>
 
 注意点：`peerDependencies` 并不会帮你安装依赖，只是使用宿主环境的依赖，如果 `npm3` 版本不合适，只会 `warning`
