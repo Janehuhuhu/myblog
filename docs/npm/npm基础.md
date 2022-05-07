@@ -75,6 +75,12 @@ majorVersion = get(version, '0')
 
 <div style='margin-top: 50px'></div>
 
+## 计算包体积
+```js
+// 终端执行以下命令，即可计算 node_modules 体积
+du -hd 0 node_modules
+```
+
 ## FAQ
 6.1 Q: 报错 *name cannot start with an underscore; name can only contain URL-friendly characters*
 
