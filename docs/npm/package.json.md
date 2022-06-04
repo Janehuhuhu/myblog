@@ -37,3 +37,20 @@
   }
 }
 ```
+
+## types
+
+如果你的包有一个主 `.js` 文件，你还是需要在 `package.json` 里指定主声明文件。 设置 `types` 属性指向捆绑在一起的声明文件。 比如：
+
+```js
+{
+    "name": "awesome",
+    "author": "Vandelay Industries",
+    "version": "1.0.0",
+    "main": "./lib/main.js",
+    "types": "./lib/main.d.ts"
+}
+```
+注意 `"typings"` 与 `"types"` 具有相同的意义，也可以使用它。
+
+同样要注意的是如果主声明文件名是 `index.d.ts` 并且位置在包的根目录里（与`index.js`并列），你就不需要使用 `"types"` 属性指定了。
