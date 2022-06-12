@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>配置文件详解 | 小生天地</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpeg">
+    <meta name="description" content="小生学习天地">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.a280ad29.js" as="script"><link rel="preload" href="/assets/js/2.fb79666b.js" as="script"><link rel="preload" href="/assets/js/32.3c7224c6.js" as="script"><link rel="prefetch" href="/assets/js/10.bb154cb0.js"><link rel="prefetch" href="/assets/js/11.daa4d740.js"><link rel="prefetch" href="/assets/js/12.7411366b.js"><link rel="prefetch" href="/assets/js/13.ad26b898.js"><link rel="prefetch" href="/assets/js/14.274e4703.js"><link rel="prefetch" href="/assets/js/15.cf27d9ea.js"><link rel="prefetch" href="/assets/js/16.2a9e14ef.js"><link rel="prefetch" href="/assets/js/17.d39df2ac.js"><link rel="prefetch" href="/assets/js/18.6517bc79.js"><link rel="prefetch" href="/assets/js/19.6285898a.js"><link rel="prefetch" href="/assets/js/20.5d706858.js"><link rel="prefetch" href="/assets/js/21.d1d4d502.js"><link rel="prefetch" href="/assets/js/22.699f6b0f.js"><link rel="prefetch" href="/assets/js/23.3dd9099b.js"><link rel="prefetch" href="/assets/js/24.274c37c4.js"><link rel="prefetch" href="/assets/js/25.ec3997de.js"><link rel="prefetch" href="/assets/js/26.57c0a967.js"><link rel="prefetch" href="/assets/js/27.5ae07707.js"><link rel="prefetch" href="/assets/js/28.654e66eb.js"><link rel="prefetch" href="/assets/js/29.0201f085.js"><link rel="prefetch" href="/assets/js/3.757746cd.js"><link rel="prefetch" href="/assets/js/30.36a739f1.js"><link rel="prefetch" href="/assets/js/31.e41a663e.js"><link rel="prefetch" href="/assets/js/33.e7e98d9b.js"><link rel="prefetch" href="/assets/js/34.40371dde.js"><link rel="prefetch" href="/assets/js/35.cacd26c6.js"><link rel="prefetch" href="/assets/js/36.4b933532.js"><link rel="prefetch" href="/assets/js/37.bb8fba66.js"><link rel="prefetch" href="/assets/js/38.c4f932ba.js"><link rel="prefetch" href="/assets/js/39.74dd58b4.js"><link rel="prefetch" href="/assets/js/4.26d385be.js"><link rel="prefetch" href="/assets/js/40.04ca984c.js"><link rel="prefetch" href="/assets/js/41.b98bbcdf.js"><link rel="prefetch" href="/assets/js/42.34a5e582.js"><link rel="prefetch" href="/assets/js/5.7348d45e.js"><link rel="prefetch" href="/assets/js/6.96312c4f.js"><link rel="prefetch" href="/assets/js/7.27e03c61.js"><link rel="prefetch" href="/assets/js/8.7e1b958f.js"><link rel="prefetch" href="/assets/js/9.f23b4cca.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpeg" alt="小生天地" class="logo"> <span class="site-name can-hide">小生天地</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/Janehuhuhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/Janehuhuhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/nginx/安装部署.html" class="sidebar-link">安装部署（mac环境）</a></li><li><a href="/nginx/常用nginx命令.html" class="sidebar-link">常用 nginx 命令(mac系统)</a></li><li><a href="/nginx/配置文件详解.html" class="active sidebar-link">配置文件详解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/nginx/默认网站.html" class="sidebar-link">默认网站</a></li><li><a href="/nginx/虚拟主机.html" class="sidebar-link">nginx虚拟主机</a></li><li><a href="/nginx/反向代理.html" class="sidebar-link">反向代理</a></li><li><a href="/nginx/下载限速.html" class="sidebar-link">下载限速</a></li><li><a href="/nginx/URL重写.html" class="sidebar-link">URL重写</a></li><li><a href="/nginx/Nginx优化.html" class="sidebar-link">Nginx优化</a></li><li><a href="/nginx/Nginx缓存.html" class="sidebar-link">Nginx缓存</a></li><li><a href="/nginx/Nginx镜像服务器.html" class="sidebar-link">Nginx镜像服务器</a></li><li><a href="/nginx/Nginx集群.html" class="sidebar-link">集群介绍</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="配置文件详解"><a href="#配置文件详解" class="header-anchor">#</a> 配置文件详解</h3> <hr> <h3 id="nginx-文件结构"><a href="#nginx-文件结构" class="header-anchor">#</a> nginx 文件结构</h3> <ul><li>全局块：配置影响nginx全局的指令。一般有运行nginx服务器的用户组，nginx进程pid存放路径，日志存放路径，配置文件引入，允许生成worker process数等。</li> <li>events块：配置影响nginx服务器或与用户的网络连接。有每个进程的最大连接数，选取哪种事件驱动模型处理连接请求，是否允许同时接受多个网路连接，开启多个网络连接序列化等。</li> <li>http块：可以嵌套多个server，配置代理，缓存，日志定义等绝大多数功能和第三方模块的配置。如文件引入，mime-type定义，日志自定义，是否使用sendfile传输文件，连接超时时间，单连接请求数等。</li> <li>server块：配置虚拟主机的相关参数，一个http中可以有多个server。</li> <li>location块：配置请求的路由，以及各种页面的处理情况。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">...</span>              #全局块
+
+events <span class="token punctuation">{</span>         #events块
+   <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+http      #http块
+<span class="token punctuation">{</span>
+    <span class="token operator">...</span>   #http全局块
+    server        #server块
+    <span class="token punctuation">{</span> 
+        <span class="token operator">...</span>       #server全局块
+        location <span class="token punctuation">[</span><span class="token constant">PATTERN</span><span class="token punctuation">]</span>   #location块
+        <span class="token punctuation">{</span>
+            <span class="token operator">...</span>
+        <span class="token punctuation">}</span>
+        location <span class="token punctuation">[</span><span class="token constant">PATTERN</span><span class="token punctuation">]</span> 
+        <span class="token punctuation">{</span>
+            <span class="token operator">...</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    server
+    <span class="token punctuation">{</span>
+      <span class="token operator">...</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">...</span>     #http全局块
+<span class="token punctuation">}</span>
+</code></pre></div><div style="margin-top:50px;"></div> <h3 id="模块详解"><a href="#模块详解" class="header-anchor">#</a> 模块详解</h3> <h4 id="全局块"><a href="#全局块" class="header-anchor">#</a> 全局块</h4> <div class="language-js extra-class"><pre class="language-js"><code>#启动子进程程序默认用户或者组，默认为nobody nobody
+#user  nobody<span class="token punctuation">;</span>
+
+#一个主进程和多个工作进程。工作进程是单进程的，且不需要特殊授权即可运行；这里定义的是工作进程数量，通常设置成和cpu的数量相等
+worker_processes  <span class="token number">1</span><span class="token punctuation">;</span>
+
+#全局错误日志的位置及日志级别。这个设置可以放入全局块，http块，server块，级别以此为：debug<span class="token operator">|</span>info<span class="token operator">|</span>notice<span class="token operator">|</span>warn<span class="token operator">|</span>error<span class="token operator">|</span>crit<span class="token operator">|</span>alert<span class="token operator">|</span>emerg
+#error_log  logs<span class="token operator">/</span>error<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
+#error_log  logs<span class="token operator">/</span>error<span class="token punctuation">.</span>log  notice<span class="token punctuation">;</span>
+#error_log  logs<span class="token operator">/</span>error<span class="token punctuation">.</span>log  info<span class="token punctuation">;</span>
+
+#指定nginx进程运行文件存放地址
+#pid        logs<span class="token operator">/</span>nginx<span class="token punctuation">.</span>pid<span class="token punctuation">;</span>
+</code></pre></div><h4 id="events块"><a href="#events块" class="header-anchor">#</a> events块</h4> <div class="language-js extra-class"><pre class="language-js"><code>events <span class="token punctuation">{</span>
+    accept_mutex on<span class="token punctuation">;</span>   #设置网路连接序列化，防止惊群现象发生，默认为on
+    multi_accept on<span class="token punctuation">;</span>  #设置一个进程是否同时接受多个网络连接，默认为off
+    #use epoll<span class="token punctuation">;</span>      #事件驱动模型，select<span class="token operator">|</span>poll<span class="token operator">|</span>kqueue<span class="token operator">|</span>epoll<span class="token operator">|</span>resig<span class="token operator">|</span><span class="token operator">/</span>dev<span class="token operator">/</span>poll<span class="token operator">|</span>eventport
+    worker_connections  <span class="token number">1024</span><span class="token punctuation">;</span>    #单个进程最大连接数
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="http块"><a href="#http块" class="header-anchor">#</a> http块</h4> <div class="language-js extra-class"><pre class="language-js"><code>http <span class="token punctuation">{</span>
+    #文件扩展名与文件类型映射表。<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Nginx</span><span class="token template-punctuation string">`</span></span>通过服务器端文件的后缀名和<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">mime.type</span><span class="token template-punctuation string">`</span></span>来判断这个文件属于什么类型，再将该数据类型写入<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">HTTP</span><span class="token template-punctuation string">`</span></span>头部的<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Content-Typ</span><span class="token template-punctuation string">`</span></span>e字段中，发送给客户端。
+    include       mime<span class="token punctuation">.</span>types<span class="token punctuation">;</span>
+
+    #默认文件类型，默认为text<span class="token operator">/</span>plain
+    default_type  application<span class="token operator">/</span>octet<span class="token operator">-</span>stream<span class="token punctuation">;</span>
+
+    #日志格式
+    #log_format  main  <span class="token string">'$remote_addr - $remote_user [$time_local] &quot;$request&quot; '</span>
+    #                  <span class="token string">'$status $body_bytes_sent &quot;$http_referer&quot; '</span>
+    #                  <span class="token string">'&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;'</span><span class="token punctuation">;</span>
+
+    #全局访问日志路径 
+    #access_log  logs<span class="token operator">/</span>access<span class="token punctuation">.</span>log  main<span class="token punctuation">;</span>
+
+    #sendfile指令指定 nginx 是否调用sendfile 函数（zero copy 方式）来输出文件，对于普通应用，必须设为on。如果用来进行下载等应用磁盘<span class="token constant">IO</span>重负载应用，可设置为off，以平衡磁盘与网络<span class="token constant">IO</span>处理速度，降低系统uptime。
+    sendfile        on<span class="token punctuation">;</span>
+    
+    #此选项允许或禁止使用socke的<span class="token constant">TCP_CORK</span>的选项，此选项仅在使用sendfile的时候使用
+    #tcp_nopush     on<span class="token punctuation">;</span>
+
+    #长连接超时时间
+    #keepalive_timeout  <span class="token number">0</span><span class="token punctuation">;</span>
+    keepalive_timeout  <span class="token number">65</span><span class="token punctuation">;</span>
+
+    #开启压缩
+    #gzip  on<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><details class="custom-block details"><summary>日志格式参数</summary> <ul><li>$remote_addr与$http_x_forwarded_for用以记录客户端的ip地址；</li> <li>$remote_user：用来记录客户端用户名称；</li> <li>$time_local： 用来记录访问时间与时区；</li> <li>$request： 用来记录请求的url与http协议；</li> <li>$status： 用来记录请求状态；成功是200，</li> <li>$body_bytes_sent ：记录发送给客户端文件主体内容大小；</li> <li>$http_referer：用来记录从那个页面链接访问过来的；</li> <li>$http_user_agent：记录客户浏览器的相关信息；</li></ul></details> <h4 id="server块"><a href="#server块" class="header-anchor">#</a> server块</h4> <div class="language-js extra-class"><pre class="language-js"><code>server <span class="token punctuation">{</span>
+    #虚拟主机使用的端口
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+
+    #虚拟主机域名
+    server_name  localhost<span class="token punctuation">;</span>
+
+    #虚拟主机支持的字符集
+    #charset koi8<span class="token operator">-</span>r<span class="token punctuation">;</span>
+
+    #虚拟主机的访问日志路径
+    #access_log  logs<span class="token operator">/</span>host<span class="token punctuation">.</span>access<span class="token punctuation">.</span>log  main<span class="token punctuation">;</span>
+
+    #定义web根路径
+    location <span class="token operator">/</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="location块"><a href="#location块" class="header-anchor">#</a> location块</h4> <div class="language-js extra-class"><pre class="language-js"><code>location <span class="token operator">/</span> <span class="token punctuation">{</span>
+    #根目录路径
+    root   html<span class="token punctuation">;</span>
+
+    #索引页
+    index  index<span class="token punctuation">.</span>html index<span class="token punctuation">.</span>htm<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div style="margin-top:50px;"></div> <h3 id="🔗-相关链接"><a href="#🔗-相关链接" class="header-anchor">#</a> 🔗 相关链接</h3> <ul><li><a href="https://www.runoob.com/w3cnote/nginx-setup-intro.html" target="_blank" rel="noopener noreferrer">nginx详细配置<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6844903741678698510" target="_blank" rel="noopener noreferrer">nginx.conf配置文件详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://www.360doc.com/content/19/0226/16/59494473_817687698.shtml" target="_blank" rel="noopener noreferrer">mime.types<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.huangfeiqiao.com/archives/nginx-internal-redirect.html" target="_blank" rel="noopener noreferrer">internal<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/nginx/常用nginx命令.html" class="prev">
+        常用 nginx 命令(mac系统)
+      </a></span> <span class="next"><a href="/nginx/默认网站.html">
+        默认网站
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a280ad29.js" defer></script><script src="/assets/js/2.fb79666b.js" defer></script><script src="/assets/js/32.3c7224c6.js" defer></script>
+  </body>
+</html>

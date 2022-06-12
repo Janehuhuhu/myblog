@@ -8,6 +8,7 @@ const gitConfig = require('../git/config')
 const vueConfig = require('../vue/config')
 const databaseConfig = require('../database/config')
 const nodeConfig = require('../node/config')
+const newsConfig = require('../news/config')
 
 module.exports = {
   title: '小生天地', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
@@ -24,7 +25,9 @@ module.exports = {
     nav: [
       //格式一：直接跳转，'/'为不添加路由，跳转至首页
       { text: '首页', link: '/' },
-      { text: '社区资讯', link: '/news/' },
+      // {
+      //   text: '社区资讯', link: '/news/'
+      // },
       { text: 'Github', link: 'https://github.com/Janehuhuhu' },
     ],
 
@@ -40,6 +43,7 @@ module.exports = {
       ...vueConfig,
       ...databaseConfig,
       ...nodeConfig,
+      ...newsConfig,
     }
   },
   dest: 'public',

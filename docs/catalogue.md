@@ -12,3 +12,5 @@
 - [数据库](/database/mysql/index)
 - [node](/node/node框架/anywhere)
 
+- [news](/news/资讯来源)
+
